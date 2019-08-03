@@ -1,11 +1,7 @@
 import React, { Component } from "react";
 
 class EditDrink extends Component {
-    constructor(props) {
-        super(props);
-        this.onSubmit = this.onSubmit.bind(this);
-      }
-    onSubmit(event) {
+    onSubmit = (event) => {
         event.preventDefault();
         var ItemName = this.refs.itemName.value;
         var ItemNote = this.refs.itemNote.value;

@@ -2,25 +2,20 @@ import React, { Component } from "react";
 import EditDrink from "./EditDrink";
 
 class DrinkListItem extends Component {
-    constructor(props) {
-      super(props);
-      this.onClickClose = this.onClickClose.bind(this);
-      this.onClickDone = this.onClickDone.bind(this);
-      this.editItem = this.editItem.bind(this);
-    }
-    onClickClose() {
+    
+    onClickClose = () => {
       var index = parseInt(this.props.index);
       this.props.removeItem(index);
     }
-    onClickDone() {
+    onClickDone = () =>{
       var index = parseInt(this.props.index);
       this.props.markTodoDone(index);
     }
-    editItem(drinkItem,note,price){//因為要在這裡拿到index所以要寫一個method呼叫父組建的edit並且再將此方法傳入子組建
+    editItem = (drinkItem,note,price) => {//因為要在這裡拿到index所以要寫一個method呼叫父組建的edit並且再將此方法傳入子組建
       var index = parseInt(this.props.index);
       this.props.editItem(index,drinkItem,note,price);
     }
-    //
+    
     render () {
       return(
         <li className="list-group-item ">

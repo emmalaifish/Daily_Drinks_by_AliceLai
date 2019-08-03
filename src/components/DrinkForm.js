@@ -1,16 +1,13 @@
 import React, { Component } from "react";
 
 class DrinkForm extends Component {
-    constructor(props) {
-      super(props);
-      this.onSubmit = this.onSubmit.bind(this);
-    }
-    componentDidMount() {
+    
+    componentDidMount = () =>{
       this.refs.itemName.focus();
       this.refs.itemNote.focus();
       this.refs.itemPrice.focus();
     }
-    onSubmit(event) {
+    onSubmit = (event) => {
       event.preventDefault();
       var newItemName = this.refs.itemName.value;
       var newItemNote = this.refs.itemNote.value;
